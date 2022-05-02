@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  elasticmq:
+    container_name: elasticmq
+    image: softwaremill/elasticmq:latest
+    tty: true
+    environment:
+      - HOSTMALE_EXTERNAL='elasticmq'
+    stdin_open: true
+    ports:
+      - 9324:9324
+      - 9325:9325
+    volumes:
+      - ${PWD}/elasticmq.conf:/opt/elasticmq.conf
