@@ -19,13 +19,13 @@ class SendMessageCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:message:send');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->messageBus->dispatch(new Review('This is a great Review!'));
 
