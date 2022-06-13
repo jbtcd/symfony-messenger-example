@@ -10,6 +10,8 @@ class ReviewHandler
 {
     public function __invoke(Review $review)
     {
-        dump($review);
+        dump('HERE');
+
+        throw new \Exception();
     }
 }
